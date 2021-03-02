@@ -23,7 +23,7 @@
     <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
 
         
-    <style>
+  <style>
       *{
         color: orange;
       }
@@ -31,6 +31,114 @@
         font-size: 10px;
         color:lightgrey;
       }
+
+  .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  text-align: right;
+
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+
     </style>
   </head>
   
@@ -52,10 +160,18 @@
               <li class="nav-item">
                 <a class="nav-link page-scroll"  style="font-size: 20px;" href="#features">خبراء المنصة</a>
               </li>                            
-              <li class="nav-item">
-                <a class="nav-link page-scroll"  style="font-size: 20px;" href="#portfolios">كورسات</a>
-              </li>            
-             
+                         
+              <div class="dropdown">
+                <li class="nav-item">
+                  <a class="nav-link page-scroll"  style="font-size: 20px;" href="">كورسات</a>
+                </li>  
+                <div class="dropdown-content">
+                  <a href="/webProject/webProject/424.html">نال 424</a>
+                  <a href="/webProject/webProject/240.html">نال 240</a>
+                </div>
+               
+                </div>
+              </div>
               
             </ul>              
           </div>
@@ -65,7 +181,41 @@
       <!-- Main Carousel Section -->
       <div id="carousel-area">
         <img src="img/land2.jpg" width="100%"  height="500px" alt="">
-
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">ID</th>
+  
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Account">Nawaf Almohsen</td>
+              <td data-label="Due Date">438103949</td>
+            </tr>
+            <tr>
+              <td data-label="Account">Tariq Alshehri
+              </td>
+              <td data-label="Due Date">438101552</td>
+             
+            </tr>
+            <tr>
+              <td data-label="Account">Abdullah alsuhaibani</td>
+              <td data-label="Due Date">438100879</td>
+            
+            </tr>
+            <tr>
+              <td data-label="Account">Mohammed Alabdullatif</td>
+              <td data-label="Due Date">438101664</td>
+    
+            </tr>
+            <tr>
+              <td data-label="Account">Fahad Al Qahtani</td>
+              <td data-label="Due Date">438100865</td>
+            </tr>
+          </tbody>
+        </table>
       </div>  
 
     </header>
@@ -112,8 +262,8 @@
 
     
     <!-- Team section Start -->
-    <section id="team" class="section"> 
-      <div class="container">
+    <section id="team" class="features"> 
+      <div class="container pb-40">
         <div class="section-header pb-40">          
           <h2 class="section-titleB rtll">   استشارة مع خبراء المنصة </h2>
         </div>
